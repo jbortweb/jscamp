@@ -22,9 +22,28 @@
 //   })
 // })
 
+/*  BUSCADOR
+const searchInput = document.querySelector('#empleos-search-input')
+
+searchInput.addEventListener('input', () => {
+  console.log(searchInput.value)
+})
+
+const searchForm = document.querySelector('#empleos-search-form')
+
+searchForm.addEventListener('submit', (event) => {
+  event.preventDefault()
+  console.log('Formulario enviado con valor:', searchInput.value)
+})
+
+searchForm.addEventListener('keydown', (event) => {
+  console.log('Tecla presionada en el formulario de búsqueda', event.key)
+})
+   */
+
 const jobsListingSection = document.querySelector('.jobs-listings')
 
-jobsListingSection.addEventListener('click', function(event) {
+jobsListingSection.addEventListener('click', function (event) {
   const element = event.target
 
   if (element.classList.contains('button-apply-job')) {
@@ -34,8 +53,24 @@ jobsListingSection.addEventListener('click', function(event) {
   }
 })
 
-const filter = document.querySelector('#filter-technology')
 
-filter.addEventListener('change', function () {
-  console.log(filter.value)
+const locationFilters = document.querySelector('#filter-location')
+const mensaje = document.querySelector('#filter-selected-value')
+const jobs = document.querySelectorAll('.job-listing-card')
+
+locationFilters.addEventListener('change', (event) => {
+  const selectedValue = locationFilters.value
+
+  if (selectedValue) {
+    mensaje.textContent = `Has seleccionado: ${selectedValue}`
+  } else {
+    mensaje.textContent = ''
+  }
+
+
+  jobs.forEach((job) => {
+    const modalidad = job.dataset.modalidad
+    const isShow = selectedValue === '' || modalidad === selectedValue
+    job.classList.toggle('is-hidden', !isShow)
+  })
 })

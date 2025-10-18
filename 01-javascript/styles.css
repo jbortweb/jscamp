@@ -58,16 +58,37 @@ body {
   line-height: 1.6;
 }
 
+select {
+  padding: 0.62rem 1.25rem;
+  background-color: #242d3a;
+  border: 0;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  color: #ddd;
+  cursor: pointer;
+  transition: all 0.2s;
+  appearance: none;
+  background-image: url("./chevron-down.svg");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  padding-right: 2.5rem;
 
+  &:hover {
+    background-color: var(--primary-hover);
+    color: #fff;
+  }
 
+  &:focus {
+    outline: 2px solid #1173d4;
+    outline-offset: 2px;
+  }
+}
 
-
-
-
-
-
-
-
+option {
+  background-color: #242d3a;
+  color: #ddd;
+  padding: 0.5rem;
+}
 
 
 /* Títulos principales */
@@ -399,7 +420,7 @@ h2.search-result {
   border: 1px solid rgba(255, 255, 255, .3);
   border-radius: 1rem;
 
-  article {
+  .job-listing-card {
     background: none;
     box-shadow: none;
     border-radius: 0;
@@ -409,6 +430,10 @@ h2.search-result {
     display: flex;
     align-items: start;
     gap: 1rem;
+
+    &.is-hidden {
+      display: none;
+    }
 
     small {
       font-size: .875rem;
