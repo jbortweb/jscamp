@@ -9,7 +9,7 @@
 
   <title>DevJobs - Empleos</title>
   <link rel="stylesheet" href="./styles.css" />
-  <script async src="./script.js"></script>
+  <script type="module" src="./main.js"></script>
 </head>
 
 <body>
@@ -59,7 +59,7 @@
             <option value="">Tecnología</option>
             <option value="javascript">JavaScript</option>
             <option value="python">Python</option>
-            <option value="java">Java</option>
+            <option value="vue">Vue</option>
             <option value="react">React</option>
             <option value="nodejs">Node.js</option>
           </select>
@@ -80,7 +80,7 @@
             <option value="guadalajara">Freelance</option>
           </select> -->
 
-          <select name="experience-level" id="filter-experience-level">
+          <select name="experience" id="filter-experience">
             <option value="">Nivel de experiencia</option>
             <option value="junior">Junior</option>
             <option value="mid">Mid-level</option>
@@ -96,49 +96,7 @@
       <h2 class="search-result">Resultados de búsqueda</h2>
 
       <div class="jobs-listings">
-        <article data-modalidad="remoto" class="job-listing-card">
-          <div>
-            <h3>Ingeniero de Software</h3>
-            <small>Tech Solutions Inc. | Remoto</small>
-            <p>Buscamos un ingeniero de software con experiencia en desarrollo web y conocimientos en JavaScript, React
-              y
-              Node.js. El candidato ideal debe ser capaz de trabajar en equipo y tener buenas habilidades de
-              comunicación.</p>
-          </div>
-          <button class="button-apply-job" id="boton-importante">Aplicar</button>
-        </article>
 
-        <article data-modalidad="cdmx" class="job-listing-card">
-          <div>
-            <h3>Analista de Datos</h3>
-            <small>Data Driven Co. | Ciudad de México</small>
-            <p>Estamos buscando un analista de datos con experiencia en el manejo de grandes conjuntos de datos y
-              herramientas de visualización. Se requiere conocimiento en SQL, Python y R.</p>
-          </div>
-          <button class="button-apply-job">Aplicar</button>
-        </article>
-
-        <article data-modalidad="guadalajara" class="job-listing-card">
-          <div>
-            <h3>Desarrollador de Aplicaciones Móviles</h3>
-            <small>Mobile Apps Ltd. | Guadalajara</small>
-            <p>Buscamos un desarrollador de aplicaciones móviles con experiencia en iOS y/o Android. El candidato debe
-              tener conocimientos en Swift, Kotlin y el desarrollo de interfaces de usuario.</p>
-          </div>
-          <button class="button-apply-job">Aplicar</button>
-        </article>
-
-        <article data-modalidad="remoto" class="job-listing-card">
-          <div>
-            <h3>Ingeniero de DevOps</h3>
-            <small>Cloud Services SA | Remoto</small>
-            <p>Estamos buscando un ingeniero de DevOps con experiencia en la gestión de infraestructuras en la nube,
-              automatización de procesos y herramientas de integración continua. Se requiere conocimiento en AWS, Azure
-              o
-              GCP.</p>
-          </div>
-          <button class="button-apply-job">Aplicar</button>
-        </article>
       </div>
 
       <nav class="pagination">
