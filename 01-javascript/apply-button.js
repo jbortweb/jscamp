@@ -36,22 +36,4 @@ jobsListingSection.addEventListener('click', function (event) {
 //   })
 // })
 
-/*  BUSCADOR
-const searchInput = document.querySelector('#empleos-search-input')
-
-searchInput.addEventListener('input', () => {
-  console.log(searchInput.value)
-})
-
-const searchForm = document.querySelector('#empleos-search-form')
-
-searchForm.addEventListener('submit', (event) => {
-  event.preventDefault()
-  console.log('Formulario enviado con valor:', searchInput.value)
-})
-
-searchForm.addEventListener('keydown', (event) => {
-  console.log('Tecla presionada en el formulario de búsqueda', event.key)
-})
-   */
 
