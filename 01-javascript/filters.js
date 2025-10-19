@@ -1,6 +1,7 @@
 const searchForm = document.querySelector('#empleos-search-input')
 const locationFilters = document.querySelector('#filter-location')
 const nivelFilters = document.querySelector('#filter-experience')
+const technologyFilters = document.querySelector('#filter-technology')
 const mensaje = document.querySelector('#filter-selected-value')
 
 // Función que aplica todos los filtros
@@ -10,19 +11,22 @@ function applyAllFilters() {
   const searchValue = searchForm.value.toLowerCase().trim()
   const locationValue = locationFilters.value
   const nivelValue = nivelFilters.value
+  const technologyValue = technologyFilters.value
 
   jobs.forEach((job) => {
     const title = job.querySelector("h3").textContent.toLowerCase()
     const modalidad = job.dataset.modalidad
     const nivel = job.dataset.nivel
+    const technologies = job.dataset.technology
 
     // Verificar si cumple con TODOS los filtros activos
     const matchesSearch = searchValue === '' || title.includes(searchValue)
     const matchesLocation = locationValue === '' || modalidad === locationValue
     const matchesNivel = nivelValue === '' || nivel === nivelValue
+    const matchesTechnology = technologyValue === '' || technologies.includes(technologyValue)
 
     // Solo mostrar si cumple con TODOS los filtros
-    const isShow = matchesSearch && matchesLocation && matchesNivel
+    const isShow = matchesSearch && matchesLocation && matchesNivel && matchesTechnology
     job.classList.toggle('is-hidden', !isShow)
   })
 }
@@ -51,6 +55,20 @@ nivelFilters.addEventListener('change', (event) => {
 
   if (selectedValue) {
     mensaje.textContent = `Nivel: ${selectedValue}`
+  } else {
+    mensaje.textContent = ''
+  }
+
+  applyAllFilters()
+})
+
+//TECNOLOGÍA
+
+technologyFilters.addEventListener('change', (event) => {
+  const selectedValue = technologyFilters.value
+
+  if (selectedValue) {
+    mensaje.textContent = `Tecnología: ${selectedValue}`
   } else {
     mensaje.textContent = ''
   }

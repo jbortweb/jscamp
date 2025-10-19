@@ -22,7 +22,9 @@
     "ubicacion": "Ciudad de México",
     "descripcion": "Estamos buscando un analista de datos con experiencia en el manejo de grandes conjuntos de datos y herramientas de visualización. Se requiere conocimiento en SQL, Python y R.",
     "data": {
-      "technology": "python",
+      "technology": [
+        "python"
+      ],
       "modalidad": "cdmx",
       "nivel": "junior"
     }
@@ -32,9 +34,11 @@
     "titulo": "Desarrollador de Aplicaciones Móviles",
     "empresa": "Mobile Apps Ltd.",
     "ubicacion": "Guadalajara",
-    "descripcion": "Buscamos un desarrollador de aplicaciones móviles con experiencia en iOS y/o Android. El candidato debe tener conocimientos en Swift, Kotlin y el desarrollo de interfaces de usuario.",
+    "descripcion": "Buscamos un desarrollador de aplicaciones móviles con experiencia en python. El candidato debe tener conocimientos en Swift, Kotlin y el desarrollo de interfaces de usuario.",
     "data": {
-      "technology": "python",
+      "technology": [
+        "python"
+      ],
       "modalidad": "guadalajara",
       "nivel": "senior"
     }
@@ -44,9 +48,11 @@
     "titulo": "Ingeniero de DevOps",
     "empresa": "Cloud Services SA",
     "ubicacion": "Remoto",
-    "descripcion": "Estamos buscando un ingeniero de DevOps con experiencia en la gestión de infraestructuras en la nube, automatización de procesos y herramientas de integración continua. Se requiere conocimiento en AWS, Azure o GCP.",
+    "descripcion": "Estamos buscando un ingeniero de DevOps con experiencia en la gestión de infraestructuras en la nube, automatización de procesos y herramientas de integración continua. Se requiere conocimiento en Node, Azure o GCP.",
     "data": {
-      "technology": "node",
+      "technology": [
+        "node"
+      ],
       "modalidad": "remoto",
       "nivel": "mid-level"
     }
@@ -56,9 +62,11 @@
     "titulo": "Diseñador UX/UI",
     "empresa": "Creative Minds Studio",
     "ubicacion": "Barcelona",
-    "descripcion": "Estamos buscando un diseñador UX/UI con pasión por crear experiencias digitales excepcionales. Se requiere experiencia en Figma, diseño centrado en el usuario y colaboración con equipos de desarrollo.",
+    "descripcion": "Estamos buscando un diseñador UX/UI con pasión por crear experiencias digitales excepcionales. Se requiere experiencia en Javascript, diseño centrado en el usuario y colaboración con equipos de desarrollo.",
     "data": {
-      "technology": "javascript",
+      "technology": [
+        "javascript"
+      ],
       "modalidad": "barcelona",
       "nivel": "junior"
     }
@@ -68,9 +76,11 @@
     "titulo": "Administrador de Bases de Datos",
     "empresa": "Secure Data Corp.",
     "ubicacion": "Barcelona",
-    "descripcion": "Se busca un administrador de bases de datos con experiencia en PostgreSQL y MySQL. El candidato deberá asegurar la disponibilidad, seguridad y rendimiento de las bases de datos de producción.",
+    "descripcion": "Se busca un frontend de Vue con conocimientos en PostgreSQL y MySQL. El candidato deberá asegurar la disponibilidad, seguridad y rendimiento de las bases de datos de producción.",
     "data": {
-      "technology": "vue",
+      "technology": [
+        "vue"
+      ],
       "modalidad": "barcelona",
       "nivel": "junior"
     }
@@ -80,9 +90,11 @@
     "titulo": "Especialista en Ciberseguridad",
     "empresa": "SafeNet Solutions",
     "ubicacion": "Remoto",
-    "descripcion": "Buscamos un especialista en ciberseguridad con conocimientos en protección de infraestructuras, análisis de vulnerabilidades y respuesta ante incidentes. Se valorará experiencia con SIEM y certificaciones de seguridad.",
+    "descripcion": "Buscamos un especialista en node con conocimientos en protección de infraestructuras, análisis de vulnerabilidades y respuesta ante incidentes. Se valorará experiencia con SIEM y certificaciones de seguridad.",
     "data": {
-      "technology": "node",
+      "technology": [
+        "node"
+      ],
       "modalidad": "remoto",
       "nivel": "mid-level"
     }
@@ -92,9 +104,11 @@
     "titulo": "Product Manager",
     "empresa": "NextGen Technologies",
     "ubicacion": "Madrid",
-    "descripcion": "Estamos buscando un Product Manager con experiencia en la definición y lanzamiento de productos digitales. Se requiere capacidad analítica, liderazgo y conocimiento en metodologías ágiles.",
+    "descripcion": "Estamos buscando un desarrollador de Vue con experiencia en la definición y lanzamiento de productos digitales. Se requiere capacidad analítica, liderazgo y conocimiento en metodologías ágiles.",
     "data": {
-      "technology": "vue",
+      "technology": [
+        "vue"
+      ],
       "modalidad": "madrid",
       "nivel": "senior"
     }
@@ -106,7 +120,9 @@
     "ubicacion": "Ciudad de México",
     "descripcion": "Buscamos un desarrollador frontend con experiencia en React, TypeScript y Tailwind CSS. Se valorará conocimiento en optimización de rendimiento y accesibilidad web.",
     "data": {
-      "technology": "react",
+      "technology": [
+        "react"
+      ],
       "modalidad": "cdmx",
       "nivel": "mid-level"
     }
@@ -118,7 +134,9 @@
     "ubicacion": "Barcelona",
     "descripcion": "Estamos buscando un desarrollador backend con experiencia en Node.js, Express y bases de datos NoSQL. Se requiere conocimiento en arquitectura de microservicios.",
     "data": {
-      "technology": "node",
+      "technology": [
+        "node"
+      ],
       "modalidad": "barcelona",
       "nivel": "lead"
     }
@@ -128,9 +146,11 @@
     "titulo": "Ingeniero de Machine Learning",
     "empresa": "AI Labs",
     "ubicacion": "Remoto",
-    "descripcion": "Buscamos un ingeniero de machine learning con experiencia en modelos de predicción y procesamiento de datos. Se valorará conocimiento en TensorFlow, PyTorch y MLOps.",
+    "descripcion": "Buscamos un ingeniero de machine learning con experiencia en modelos de predicción y procesamiento de datos. Se valorará conocimiento en python, PyTorch y MLOps.",
     "data": {
-      "technology": "python",
+      "technology": [
+        "python"
+      ],
       "modalidad": "remoto",
       "nivel": "senior"
     }
@@ -140,9 +160,11 @@
     "titulo": "QA Automation Engineer",
     "empresa": "Quality First",
     "ubicacion": "Madrid",
-    "descripcion": "Se busca ingeniero de QA con experiencia en automatización de pruebas utilizando herramientas como Selenium, Cypress o Playwright. Conocimiento deseado en CI/CD.",
+    "descripcion": "Se busca ingeniero de QA con experiencia en automatización de pruebas utilizando herramientas como Javascript. Conocimiento deseado en CI/CD.",
     "data": {
-      "technology": "javascript",
+      "technology": [
+        "javascript"
+      ],
       "modalidad": "madrid",
       "nivel": "mid-level"
     }
@@ -152,9 +174,11 @@
     "titulo": "Administrador de Sistemas",
     "empresa": "InfraTech Global",
     "ubicacion": "Guadalajara",
-    "descripcion": "Buscamos un administrador de sistemas con experiencia en Linux, Docker y monitoreo de servidores. Conocimiento en scripting Bash o Python será un plus.",
+    "descripcion": "Buscamos un administrador de sistemas con experiencia en Linux, Docker y monitoreo de servidores. Conocimiento en scripting Bash o Vue será un plus.",
     "data": {
-      "technology": "vue",
+      "technology": [
+        "vue"
+      ],
       "modalidad": "guadalajara",
       "nivel": "mid-level"
     }
@@ -164,9 +188,11 @@
     "titulo": "Scrum Master",
     "empresa": "Agile Minds",
     "ubicacion": "Madrid",
-    "descripcion": "Estamos buscando un Scrum Master con experiencia en metodologías ágiles y gestión de equipos multidisciplinarios. Certificación Scrum Master deseable.",
+    "descripcion": "Estamos buscando un python con experiencia en metodologías ágiles y gestión de equipos multidisciplinarios. Certificación Scrum Master deseable.",
     "data": {
-      "technology": "python",
+      "technology": [
+        "python"
+      ],
       "modalidad": "madrid",
       "nivel": "mid-level"
     }
@@ -176,9 +202,11 @@
     "titulo": "Soporte Técnico Nivel 2",
     "empresa": "HelpDesk Pro",
     "ubicacion": "Barcelona",
-    "descripcion": "Buscamos un técnico de soporte con habilidades en resolución de incidencias, redes y sistemas operativos. Se requiere atención al detalle y excelente trato con el usuario.",
+    "descripcion": "Buscamos un técnico de soporte con habilidades en react, redes y sistemas operativos. Se requiere atención al detalle y excelente trato con el usuario.",
     "data": {
-      "technology": "react",
+      "technology": [
+        "react"
+      ],
       "modalidad": "barcelona",
       "nivel": "junior"
     }
