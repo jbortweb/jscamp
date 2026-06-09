@@ -1,12 +1,38 @@
-const Search = () => {
+import styles from './Search.module.css'
+import { useId } from 'react'
+
+const Search = ({ onSearch, onTextFilter }) => {
+  const searchText = useId()
+  const searchLocation = useId()
+  const searchExperience = useId()
+  const searchTechnology = useId()
+
+  const HandleSubmit = (e) => {
+    e.preventDefault()
+
+    const formData = new FormData(e.target)
+
+    const filters = {
+      location: formData.get(searchLocation),
+      experience: formData.get(searchExperience),
+      technology: formData.get(searchTechnology),
+    }
+    onSearch(filters)
+  }
+
+  const handleTextChange = (e) => {
+    const text = e.target.value
+    onTextFilter(text)
+  }
+
   return (
     <>
-      <section className="jobs-search">
+      <section className={styles.jobsSearch}>
         <h1>Encuentra tu próximo trabajo</h1>
         <p>Explora miles de oportunidades en el sector tecnológico.</p>
 
-        <form id="empleos-search-form" role="search">
-          <div className="search-bar">
+        <form onSubmit={HandleSubmit} id="empleos-search-form" role="search">
+          <div className={styles.searchBar}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -25,15 +51,19 @@ const Search = () => {
             </svg>
 
             <input
+              name={searchText}
               id="empleos-search-input"
-              required
               type="text"
               placeholder="Buscar trabajos, empresas o habilidades"
+              onChange={handleTextChange}
             />
+            <button type="submit" className={styles.searchButton}>
+              Buscar
+            </button>
           </div>
 
-          <div className="search-filters">
-            <select name="technology" id="filter-technology">
+          <div className={styles.searchFilters}>
+            <select name={searchTechnology} id="filter-technology">
               <option value="">Tecnología</option>
               <option value="javascript">JavaScript</option>
               <option value="python">Python</option>
@@ -42,7 +72,7 @@ const Search = () => {
               <option value="nodejs">Node.js</option>
             </select>
 
-            <select name="location" id="filter-location">
+            <select name={searchLocation} id="filter-location">
               <option value="">Ubicación</option>
               <option value="remoto">Remoto</option>
               <option value="cdmx">Ciudad de México</option>
@@ -58,7 +88,7 @@ const Search = () => {
             <option value="guadalajara">Freelance</option>
           </select> --> */}
 
-            <select name="experience" id="filter-experience">
+            <select name={searchExperience} id="filter-experience">
               <option value="">Nivel de experiencia</option>
               <option value="junior">Junior</option>
               <option value="mid-level">Mid-level</option>
