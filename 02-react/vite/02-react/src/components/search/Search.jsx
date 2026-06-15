@@ -10,7 +10,7 @@ const Search = ({ onSearch, onTextFilter }) => {
   const HandleSubmit = (e) => {
     e.preventDefault()
 
-    const formData = new FormData(e.target)
+    const formData = new FormData(e.currentTarget)
 
     const filters = {
       location: formData.get(searchLocation),
@@ -31,7 +31,7 @@ const Search = ({ onSearch, onTextFilter }) => {
         <h1>Encuentra tu próximo trabajo</h1>
         <p>Explora miles de oportunidades en el sector tecnológico.</p>
 
-        <form onSubmit={HandleSubmit} id="empleos-search-form" role="search">
+        <form onChange={HandleSubmit} id="empleos-search-form" role="search">
           <div className={styles.searchBar}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -57,9 +57,7 @@ const Search = ({ onSearch, onTextFilter }) => {
               placeholder="Buscar trabajos, empresas o habilidades"
               onChange={handleTextChange}
             />
-            <button type="submit" className={styles.searchButton}>
-              Buscar
-            </button>
+            
           </div>
 
           <div className={styles.searchFilters}>

@@ -58,6 +58,11 @@ body {
   line-height: 1.6;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 select {
   padding: 0.62rem 1.25rem;
   background-color: #242d3a;
