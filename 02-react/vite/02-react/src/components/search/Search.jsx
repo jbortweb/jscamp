@@ -1,37 +1,24 @@
 import styles from './Search.module.css'
 import { useId } from 'react'
+import useSearchForm from '../../hooks/useSearchForm'
 
-const Search = ({ onSearch, onTextFilter }) => {
-  const searchText = useId()
-  const searchLocation = useId()
-  const searchExperience = useId()
-  const searchTechnology = useId()
+export default function Search({ onSearch, onTextFilter }) {
+  const idTechnology = useId()
+  const idLocation = useId()
+  const idExperience = useId()
 
-  const HandleSubmit = (e) => {
-    e.preventDefault()
-
-    const formData = new FormData(e.currentTarget)
-
-    const filters = {
-      location: formData.get(searchLocation),
-      experience: formData.get(searchExperience),
-      technology: formData.get(searchTechnology),
-    }
-    onSearch(filters)
-  }
-
-  const handleTextChange = (e) => {
-    const text = e.target.value
-    onTextFilter(text)
-  }
+  const { searchText, handleSubmit, handleTextChange } = useSearchForm({
+    onSearch,
+    onTextFilter,
+  })
 
   return (
     <>
       <section className={styles.jobsSearch}>
-        <h1>Encuentra tu próximo trabajo</h1>
-        <p>Explora miles de oportunidades en el sector tecnológico.</p>
+        <h1>Encuentra tu proximo trabajo</h1>
+        <p>Explora miles de oportunidades en el sector tecnologico.</p>
 
-        <form onChange={HandleSubmit} id="empleos-search-form" role="search">
+        <form onSubmit={handleSubmit} onChange={handleSubmit} id="empleos-search-form" role="search">
           <div className={styles.searchBar}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -51,18 +38,18 @@ const Search = ({ onSearch, onTextFilter }) => {
             </svg>
 
             <input
-              name={searchText}
+              name="text"
               id="empleos-search-input"
               type="text"
               placeholder="Buscar trabajos, empresas o habilidades"
               onChange={handleTextChange}
+              value={searchText}
             />
-            
           </div>
 
           <div className={styles.searchFilters}>
-            <select name={searchTechnology} id="filter-technology">
-              <option value="">Tecnología</option>
+            <select name="filter-technology" id={idTechnology}>
+              <option value="">Tecnologia</option>
               <option value="javascript">JavaScript</option>
               <option value="python">Python</option>
               <option value="vue">Vue</option>
@@ -70,23 +57,16 @@ const Search = ({ onSearch, onTextFilter }) => {
               <option value="nodejs">Node.js</option>
             </select>
 
-            <select name={searchLocation} id="filter-location">
-              <option value="">Ubicación</option>
+            <select name="filter-location" id={idLocation}>
+              <option value="">Ubicacion</option>
               <option value="remoto">Remoto</option>
-              <option value="cdmx">Ciudad de México</option>
+              <option value="cdmx">Ciudad de Mexico</option>
               <option value="guadalajara">Guadalajara</option>
               <option value="madrid">Madrid</option>
               <option value="barcelona">Barcelona</option>
             </select>
-            {/* <!-- 
-          <select name="contract-type" id="contract-type">
-            <option value="">Tipo de contrato</option>
-            <option value="remoto">Jornada Completa</option>
-            <option value="cdmx">Jornada Partida</option>
-            <option value="guadalajara">Freelance</option>
-          </select> --> */}
 
-            <select name={searchExperience} id="filter-experience">
+            <select name="filter-experience" id={idExperience}>
               <option value="">Nivel de experiencia</option>
               <option value="junior">Junior</option>
               <option value="mid-level">Mid-level</option>
@@ -100,4 +80,3 @@ const Search = ({ onSearch, onTextFilter }) => {
     </>
   )
 }
-export default Search
