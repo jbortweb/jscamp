@@ -4,21 +4,12 @@ const Resultados = ({ jobs }) => {
   return (
     <>
       <section>
-        <h2 className="search-result">Resultados de búsqueda</h2>
-
         <div className="jobs-listings">
+          {jobs.length === 0 && (
+            <p style={{ textAlign: 'center' }}>No se encontraron empleos</p>
+          )}
           {jobs.map((job) => (
-            <JobCard
-              key={job.id}
-              job={job}
-              data-modalidad={job.data.modalidad}
-              data-nivel={job.data.nivel}
-              data-technology={job.data.technology}
-              titulo={job.titulo}
-              empresa={job.empresa}
-              ubicacion={job.ubicacion}
-              descripcion={job.descripcion}
-            ></JobCard>
+            <JobCard key={job.id} job={job}></JobCard>
           ))}
         </div>
       </section>

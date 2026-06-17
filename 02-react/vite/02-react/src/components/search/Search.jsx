@@ -1,16 +1,15 @@
 import styles from './Search.module.css'
-import { useId } from 'react'
 import useSearchForm from '../../hooks/useSearchForm'
 
-export default function Search({ onSearch, onTextFilter }) {
-  const idTechnology = useId()
-  const idLocation = useId()
-  const idExperience = useId()
-
-  const { searchText, handleSubmit, handleTextChange } = useSearchForm({
-    onSearch,
-    onTextFilter,
-  })
+export default function Search({ onSearch, onTextFilter, initialText, filters }) {
+  const {
+    searchText,
+    handleSubmit,
+    handleTextChange,
+    idTechnology,
+    idLocation,
+    idExperience,
+  } = useSearchForm({ onSearch, onTextFilter, initialText })
 
   return (
     <>
@@ -18,7 +17,7 @@ export default function Search({ onSearch, onTextFilter }) {
         <h1>Encuentra tu proximo trabajo</h1>
         <p>Explora miles de oportunidades en el sector tecnologico.</p>
 
-        <form onSubmit={handleSubmit} onChange={handleSubmit} id="empleos-search-form" role="search">
+        <form onSubmit={handleSubmit} id="empleos-search-form" role="search">
           <div className={styles.searchBar}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -48,7 +47,12 @@ export default function Search({ onSearch, onTextFilter }) {
           </div>
 
           <div className={styles.searchFilters}>
-            <select name="filter-technology" id={idTechnology}>
+            <select
+              name="filter-technology"
+              id={idTechnology}
+              onChange={handleSubmit}
+              defaultValue={filters?.technology || ''}
+            >
               <option value="">Tecnologia</option>
               <option value="javascript">JavaScript</option>
               <option value="python">Python</option>
@@ -57,7 +61,12 @@ export default function Search({ onSearch, onTextFilter }) {
               <option value="nodejs">Node.js</option>
             </select>
 
-            <select name="filter-location" id={idLocation}>
+            <select
+              name="filter-location"
+              id={idLocation}
+              onChange={handleSubmit}
+              defaultValue={filters?.location || ''}
+            >
               <option value="">Ubicacion</option>
               <option value="remoto">Remoto</option>
               <option value="cdmx">Ciudad de Mexico</option>
@@ -66,7 +75,12 @@ export default function Search({ onSearch, onTextFilter }) {
               <option value="barcelona">Barcelona</option>
             </select>
 
-            <select name="filter-experience" id={idExperience}>
+            <select
+              name="filter-experience"
+              id={idExperience}
+              onChange={handleSubmit}
+              defaultValue={filters?.experience || ''}
+            >
               <option value="">Nivel de experiencia</option>
               <option value="junior">Junior</option>
               <option value="mid-level">Mid-level</option>

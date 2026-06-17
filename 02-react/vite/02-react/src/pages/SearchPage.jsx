@@ -14,21 +14,30 @@ const SearchPage = () => {
     handleSearch,
     handleTextFilter,
     currentPage,
+    textToFilter,
+    filters,
   } = useFilters()
 
-  useEffect(() => {
-    document.title = `Resultados: ${total}, Pagina: ${currentPage} - DevJobs`
-  }, [total, currentPage])
+  const title = `Resultados: ${total}, Pagina: ${currentPage} - DevJobs`
 
   return (
     <main>
-      <Search onSearch={handleSearch} onTextFilter={handleTextFilter} />
-      {loading ? <p>Cargando empleos</p> : <Resultados jobs={jobs} />}
-      <Pagination
-        onPageChange={handlePageChange}
-        currentPage={currentPage}
-        totalPages={totalPages}
+      <title>{title}</title>
+      <Search
+        initialText={textToFilter}
+        filters={filters}
+        onSearch={handleSearch}
+        onTextFilter={handleTextFilter}
       />
+      <section>
+        <h2 className="search-result">Resultados de búsqueda</h2>
+        {loading ? <p>Cargando empleos</p> : <Resultados jobs={jobs} />}
+        <Pagination
+          onPageChange={handlePageChange}
+          currentPage={currentPage}
+          totalPages={totalPages}
+        />
+      </section>
     </main>
   )
 }
