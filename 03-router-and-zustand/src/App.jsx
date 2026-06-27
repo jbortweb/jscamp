@@ -1,16 +1,21 @@
+import { Route, Routes } from 'react-router'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import HomePage from './pages/HomePage'
 import SearchPage from './pages/SearchPage'
+import Details from './pages/Details/Details'
 import Page404 from './pages/Page404'
-import { Route } from './components/Route.jsx'
 
 function App() {
   return (
     <>
       <Header />
-      <Route path="/" component={HomePage} />
-      <Route path="/search" component={SearchPage} />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/search" element={<SearchPage />} />
+        <Route path="/jobs/:jobId" element={<Details />} />
+        <Route path="*" element={<Page404 />} />
+      </Routes>
       <Footer />
     </>
   )
