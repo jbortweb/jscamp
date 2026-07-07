@@ -1,12 +1,16 @@
+import { useCallback } from 'react'
 import { useNavigate, useLocation } from 'react-router'
 
 export function useRouter() {
   const navigate = useNavigate()
   const location = useLocation()
 
-  function navigateTo(path) {
-    navigate(path)
-  }
+  const navigateTo = useCallback(
+    (path) => {
+      navigate(path)
+    },
+    [navigate],
+  )
 
   return {
     currentPath: location.pathname,
