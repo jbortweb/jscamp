@@ -495,3 +495,10 @@ h2.search-result {
   font-size: 0.875em;
   font-family: 'Courier New', monospace;
 }
+
+.nav-link-active {
+  color: var(--primary);
+  pointer-events: none;
+  opacity: 0.5;
+
+}
