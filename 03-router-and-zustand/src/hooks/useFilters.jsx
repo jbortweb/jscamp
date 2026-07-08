@@ -1,25 +1,28 @@
 import { useEffect, useState } from 'react'
+import { useSearchParams } from 'react-router'
 import { useRouter } from './useRouter'
 
 const RESULT_PER_PAGE = 4
 
 export const useFilters = () => {
+  const [searchParams, setSearchParams] = useSearchParams()
+
   const [filters, setFilters] = useState(() => {
-    const params = new URLSearchParams(window.location.search)
     return {
-      location: params.get('type') || '',
-      experience: params.get('level') || '',
-      technology: params.get('technology') || '',
+      location: searchParams.get('type') || '',
+      experience: searchParams.get('level') || '',
+      technology: searchParams.get('technology') || '',
     }
   })
-  const [textToFilter, setTextToFilter] = useState(() => {
-    const params = new URLSearchParams(window.location.search)
-    return params.get('text') || ''
-  })
+
+  const [textToFilter, setTextToFilter] = useState(
+    () => searchParams.get('text') || '',
+  )
+
   const [currentPage, setCurrentPage] = useState(() => {
-    const params = new URLSearchParams(window.location.search)
-    return parseInt(params.get('page')) || 1
+    return parseInt(searchParams.get('page')) || 1
   })
+
   const [jobs, setJobs] = useState([])
   const [total, setTotal] = useState(0)
   const [loading, setLoading] = useState(true)
