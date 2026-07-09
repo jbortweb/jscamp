@@ -6,5 +6,5 @@ export const useAuthStore = create((set) => ({
 
   // Acciones
   login: () => set({ isLoggedIn: true }),
-  logout: () => set({ isLoggedIn: false }),
+  logout: () => set({ isLoggedIn: false})
 }))
