@@ -1,4 +1,4 @@
-import { JobCard } from './JobCard.jsx'
+import { JobCard } from './jobCard/JobCard.jsx'
 
 export function JobListings ({ jobs }) {
   return (

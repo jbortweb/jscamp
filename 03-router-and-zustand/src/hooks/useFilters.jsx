@@ -47,7 +47,7 @@ export const useFilters = () => {
         const queryParams = params.toString()
 
         const response = await fetch(
-          `https://jscamp-api.vercel.app/api/jobs?${queryParams}`,
+          `http://localhost:3000/jobs?${queryParams}`,
         )
         const json = await response.json()
 

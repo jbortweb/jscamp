@@ -15,11 +15,13 @@ const useFilters = () => {
     return {
       technology: searchParams.get('technology') || '',
       location: searchParams.get('type') || '',
-      experienceLevel: searchParams.get('level') || ''
+      experienceLevel: searchParams.get('level') || '',
     }
   })
 
-  const [textToFilter, setTextToFilter] = useState(() => searchParams.get('text') || '')
+  const [textToFilter, setTextToFilter] = useState(
+    () => searchParams.get('text') || '',
+  )
 
   const [currentPage, setCurrentPage] = useState(() => {
     const page = Number(searchParams.get('page'))
@@ -39,15 +41,18 @@ const useFilters = () => {
         if (textToFilter) params.append('text', textToFilter)
         if (filters.technology) params.append('technology', filters.technology)
         if (filters.location) params.append('type', filters.location)
-        if (filters.experienceLevel) params.append('level', filters.experienceLevel)
+        if (filters.experienceLevel)
+          params.append('level', filters.experienceLevel)
 
         const offset = (currentPage - 1) * RESULTS_PER_PAGE
         params.append('limit', RESULTS_PER_PAGE)
         params.append('offset', offset)
 
         const queryParams = params.toString()
-      
-        const response = await fetch(`https://jscamp-api.vercel.app/api/jobs?${queryParams}`)
+
+        const response = await fetch(
+          `http://localhost:3000/jobs?${queryParams}`,
+        )
         const json = await response.json()
 
         setJobs(json.data)
@@ -76,7 +81,6 @@ const useFilters = () => {
 
       return params
     })
-
   }, [filters, currentPage, textToFilter, setSearchParams])
 
   const totalPages = Math.ceil(total / RESULTS_PER_PAGE)
@@ -105,7 +109,7 @@ const useFilters = () => {
     textToFilter,
     handlePageChange,
     handleSearch,
-    handleTextFilter
+    handleTextFilter,
   }
 }
 
@@ -120,7 +124,7 @@ export default function SearchPage() {
     textToFilter,
     handlePageChange,
     handleSearch,
-    handleTextFilter
+    handleTextFilter,
   } = useFilters()
 
   const title = loading
@@ -130,7 +134,10 @@ export default function SearchPage() {
   return (
     <main>
       <title>{title}</title>
-      <meta name="description" content="Explora miles de oportunidades laborales en el sector tecnológico. Encuentra tu próximo empleo en DevJobs." />
+      <meta
+        name="description"
+        content="Explora miles de oportunidades laborales en el sector tecnológico. Encuentra tu próximo empleo en DevJobs."
+      />
 
       <SearchFormSection
         initialText={textToFilter}
@@ -142,10 +149,12 @@ export default function SearchPage() {
       <section className={styles.searchResults}>
         <h2 style={{ textAlign: 'center' }}>Resultados de búsqueda</h2>
 
-        {
-          loading ? <p>Cargando empleos...</p> : <JobListings jobs={jobs} />
-        }
-        <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={handlePageChange} />
+        {loading ? <p>Cargando empleos...</p> : <JobListings jobs={jobs} />}
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={handlePageChange}
+        />
       </section>
     </main>
   )
