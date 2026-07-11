@@ -9,7 +9,7 @@ export class JobController {
 
     const limitNumber = Number(limit)
     const offsetNumber = Number(offset)
-    
+
     return res.json({ data: jobs, total: jobs.length, limit: limitNumber, offset: offsetNumber })
   }
 
@@ -32,7 +32,39 @@ export class JobController {
     return res.status(201).json(newJob)
   }
 
-  static async update(req, res) {}
-  static async partialUpdate(req, res) {}
-  static async delete(req, res) {}
+  static async update(req, res) {
+    const { id } = req.params
+    const { titulo, empresa, ubicacion, data } = req.body
+
+    const updatedJob = await JobModel.update(id, { titulo, empresa, ubicacion, data })
+
+    if (!updatedJob) {
+      return res.status(404).json({ error: 'Job not found' })
+    }
+
+    return res.json(updatedJob)
+  }
+  static async partialUpdate(req, res) {
+    const { id } = req.params
+    const { titulo, empresa, ubicacion, data } = req.body
+
+    const updatedJob = await JobModel.partialUpdate(id, { titulo, empresa, ubicacion, data })
+
+    if (!updatedJob) {
+      return res.status(404).json({ error: 'Job not found' })
+    }
+
+    return res.json(updatedJob)
+  }
+  static async delete(req, res) {
+    const { id } = req.params
+
+    const deletedJob = await JobModel.delete(id)
+
+    if (!deletedJob) {
+      return res.status(404).json({ error: 'Job not found' })
+    }
+
+    return res.json({ message: 'Job deleted successfully' })
+  }
 }
